@@ -1,3 +1,82 @@
+// Edit Shipment Modal
+const editModal = document.getElementById('editShipmentModal');
+const closeEditModal = editModal.querySelector('.close-edit-modal');
+const editForm = document.getElementById('editShipmentForm');
+
+let currentEditRow = null;
+
+// Handle edit button clicks
+shipmentsTable.addEventListener('click', (e) => {
+  if (e.target.classList.contains('edit-btn')) {
+    const row = e.target.closest('tr');
+    currentEditRow = row;
+
+    const cells = row.querySelectorAll('td');
+    const tracking = cells[0].textContent.trim();
+    const customer = cells[1].textContent.trim();
+    const status = cells[2].querySelector('.status').textContent.trim();
+    const date = cells[3].textContent.trim();
+
+    // Populate the form
+    document.getElementById('editTracking').value = tracking;
+    document.getElementById('editCustomer').value = customer;
+    document.getElementById('editStatus').value = status;
+    document.getElementById('editDate').value = date;
+
+    editModal.classList.add('active');
+  }
+});
+
+// Close edit modal
+closeEditModal.addEventListener('click', () => {
+  editModal.classList.remove('active');
+});
+
+// Close on outside click
+window.addEventListener('click', (e) => {
+  if (e.target === editModal) {
+    editModal.classList.remove('active');
+  }
+});
+
+// Handle form submit
+editForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!currentEditRow) return;
+
+  const tracking = document.getElementById('editTracking').value.trim();
+  const customer = document.getElementById('editCustomer').value.trim();
+  const status = document.getElementById('editStatus').value.trim();
+  const date = document.getElementById('editDate').value;
+
+  let statusClass = "";
+  if(status === "Pending") statusClass = "pending";
+  if(status === "In Transit") statusClass = "in-transit";
+  if(status === "Delivered") statusClass = "delivered";
+
+  const cells = currentEditRow.querySelectorAll('td');
+  cells[0].textContent = tracking;
+  cells[1].textContent = customer;
+  cells[2].innerHTML = `<span class="status ${statusClass}">${status}</span>`;
+  cells[3].textContent = date;
+
+  editForm.reset();
+  editModal.classList.remove('active');
+});
+
+// Handle delete button clicks
+shipmentsTable.addEventListener('click', (e) => {
+  if (e.target.classList.contains('delete-btn')) {
+    const row = e.target.closest('tr');
+    const tracking = row.querySelector('td').textContent.trim();
+    if (confirm(`Are you sure you want to delete shipment "${tracking}"?`)) {
+      row.remove();
+    }
+  }
+});
+
+
+
 // Add Shipment Modal
 const addBtn = document.querySelector('.add-shipment-btn');
 const addModal = document.getElementById('addShipmentModal');
