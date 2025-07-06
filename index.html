@@ -39,6 +39,7 @@
   <h2>Shipments</h2>
 
   <div class="table-container">
+    <button class="add-shipment-btn">+ Add New Shipment</button>
     <table class="shipments-table">
       <thead>
         <tr>
@@ -87,6 +88,34 @@
       <p><strong>Date:</strong> <span id="modalDate"></span></p>
     </div>
   </div>
+
+      <!-- Add Shipment Modal -->
+<div class="modal-overlay" id="addShipmentModal">
+  <div class="modal-content">
+    <span class="close-add-modal">&times;</span>
+    <h3>Add New Shipment</h3>
+    <form id="addShipmentForm">
+      <label>Tracking Number</label>
+      <input type="text" id="newTracking" required>
+
+      <label>Customer Name</label>
+      <input type="text" id="newCustomer" required>
+
+      <label>Status</label>
+      <select id="newStatus" required>
+        <option value="">-- Select Status --</option>
+        <option value="Pending">Pending</option>
+        <option value="In Transit">In Transit</option>
+        <option value="Delivered">Delivered</option>
+      </select>
+
+      <label>Date</label>
+      <input type="date" id="newDate" required>
+
+      <button type="submit">Add Shipment</button>
+    </form>
+  </div>
+</div>
     </main>
     
   <script src="js/script.js"></script>
