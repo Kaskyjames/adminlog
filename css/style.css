@@ -1,3 +1,42 @@
+/* Add Shipment Button */
+.add-shipment-btn {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease;
+}
+
+.add-shipment-btn:hover {
+  background: #218838;
+}
+
+#addShipmentModal .modal-content form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+#addShipmentModal .modal-content form input,
+#addShipmentModal .modal-content form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#addShipmentModal .modal-content form button[type="submit"] {
+  background: #28a745;
+  margin-top: 1rem;
+}
+
+
+
 /* Table styles */
 .table-container {
   overflow-x: auto;
