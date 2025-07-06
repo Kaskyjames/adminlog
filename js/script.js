@@ -1,3 +1,23 @@
+// Toggle sidebar for mobile
+const toggleBtn = document.querySelector('.toggle-sidebar');
+const sidebar = document.querySelector('.sidebar');
+
+if(toggleBtn){
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+}
+
+// Logout button
+const logoutBtn = document.getElementById('logoutBtn');
+if(logoutBtn){
+  logoutBtn.addEventListener('click', () => {
+    window.location.href = 'login.html';
+  });
+}
+
+
+
 document.getElementById('loginForm').addEventListener('submit', function(e) {
   e.preventDefault();
   
