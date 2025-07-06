@@ -116,6 +116,34 @@
     </form>
   </div>
 </div>
+
+      <!-- Edit Shipment Modal -->
+<div class="modal-overlay" id="editShipmentModal">
+  <div class="modal-content">
+    <span class="close-edit-modal">&times;</span>
+    <h3>Edit Shipment</h3>
+    <form id="editShipmentForm">
+      <label>Tracking Number</label>
+      <input type="text" id="editTracking" required>
+
+      <label>Customer Name</label>
+      <input type="text" id="editCustomer" required>
+
+      <label>Status</label>
+      <select id="editStatus" required>
+        <option value="">-- Select Status --</option>
+        <option value="Pending">Pending</option>
+        <option value="In Transit">In Transit</option>
+        <option value="Delivered">Delivered</option>
+      </select>
+
+      <label>Date</label>
+      <input type="date" id="editDate" required>
+
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
     </main>
     
   <script src="js/script.js"></script>
