@@ -32,10 +32,63 @@
         <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
       </div>
     </header>
+
+
+    <!--- Shipment --->
     <main class="dashboard-main">
-      <p>Select an option from the sidebar to get started.</p>
-    </main>
+  <h2>Shipments</h2>
+
+  <div class="table-container">
+    <table class="shipments-table">
+      <thead>
+        <tr>
+          <th>Tracking No.</th>
+          <th>Customer</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GS123456789</td>
+          <td>John Doe</td>
+          <td><span class="status in-transit">In Transit</span></td>
+          <td>2025-07-10</td>
+          <td>
+            <button class="view-btn">View</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>GS987654321</td>
+          <td>Mary Smith</td>
+          <td><span class="status delivered">Delivered</span></td>
+          <td>2025-07-08</td>
+          <td>
+            <button class="view-btn">View</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+
+  <!-- Modal Popup -->
+  <div class="modal-overlay" id="shipmentModal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Shipment Details</h3>
+      <p><strong>Tracking No:</strong> <span id="modalTracking"></span></p>
+      <p><strong>Customer:</strong> <span id="modalCustomer"></span></p>
+      <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+      <p><strong>Date:</strong> <span id="modalDate"></span></p>
+    </div>
+  </div>
+    </main>
+    
   <script src="js/script.js"></script>
 </body>
 </html>
