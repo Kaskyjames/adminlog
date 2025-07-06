@@ -1,22 +1,4 @@
-#editShipmentModal .modal-content form label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: 500;
-}
 
-#editShipmentModal .modal-content form input,
-#editShipmentModal .modal-content form select {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.25rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#editShipmentModal .modal-content form button[type="submit"] {
-  background: #007bff;
-  margin-top: 1rem;
-}
 
 
 
@@ -57,6 +39,25 @@
   margin-top: 1rem;
 }
 
+#editShipmentModal .modal-content form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+#editShipmentModal .modal-content form input,
+#editShipmentModal .modal-content form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#editShipmentModal .modal-content form button[type="submit"] {
+  background: #007bff;
+  margin-top: 1rem;
+}
 
 
 /* Table styles */
